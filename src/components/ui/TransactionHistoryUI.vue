@@ -91,7 +91,7 @@ const pageNumbers = computed(() => {
         <tr
           v-for="transaction in currentTransactions"
           :key="transaction.id"
-          class="border-b border-[#EDEFF5] hover:bg-[#F9FAFC] transition-colors"
+          class="border-b border-[#EDEFF5] hover:bg-[#F9FAFC] text-[12px] transition-colors"
         >
           <td class="py-4 px-4 whitespace-nowrap">{{ transaction.id }}</td>
           <td class="py-4 px-4 whitespace-nowrap">{{ transaction.date }}</td>
@@ -103,7 +103,7 @@ const pageNumbers = computed(() => {
           <td class="p-3 whitespace-nowrap">
             <span
               :class="[
-                'px-2 py-1 rounded-full font-medium text-xs text-white',
+                'px-2 py-1 rounded-full font-medium text-white',
                 transaction.status === 'Success'
                   ? ' bg-[#52BD94]'
                   : transaction.status === 'Pending'

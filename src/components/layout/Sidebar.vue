@@ -1,11 +1,12 @@
 <template>
   <aside class="m-4 px-4 py-3 flex flex-col space-y-4">
-    <button
+    <RouterLink
+      to="/PDFSign"
       class="bg-[#0172CB] flex justify-center space-x-2 p-2 cursor-pointer w-full h-14 hover:bg-[#0061AD] hover:border-4 hover:border-[#92CFFF4D] text-white rounded-2xl items-center text-center"
     >
       <img src="/Icon/UploadFile.svg" alt="Upload File" />
       <span class="text-[16px] font-medium">Upload Document</span>
-    </button>
+    </RouterLink>
 
     <button
       class="flex justify-center space-x-2 p-2 cursor-pointer w-full h-14 text-[#0172CB] hover:bg-[#EDF7FF] hover:border-1 hover:border-[#0172CB] rounded-2xl items-center text-center"
@@ -21,7 +22,7 @@
       :class="[
         'flex justify-left space-x-2 p-2 cursor-pointer w-full h-14 rounded-2xl items-center text-left text-[#696F8C] hover:bg-[#F5F7FC]',
         $route.path === '/MainDashboard'
-          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] border-[#0172CB]'
+          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] font-semibold border-[#0172CB]'
           : '',
       ]"
     >
@@ -34,7 +35,7 @@
       :class="[
         'flex justify-left space-x-2 p-2 cursor-pointer w-full h-14 rounded-2xl items-center text-left text-[#696F8C] hover:bg-[#F5F7FC]',
         $route.path === '/MyDocument'
-          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] border-[#0172CB]'
+          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] font-semibold border-[#0172CB]'
           : '',
       ]"
     >
@@ -49,7 +50,7 @@
       :class="[
         'flex justify-left space-x-2 p-2 justify-between cursor-pointer w-full h-14 rounded-2xl items-center text-left text-[#696F8C] hover:bg-[#F5F7FC]',
         $route.path === '/Inbox'
-          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] border-[#0172CB]'
+          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] font-semibold border-[#0172CB]'
           : '',
       ]"
     >
@@ -69,7 +70,7 @@
       :class="[
         'flex justify-left space-x-2 p-2 justify-between cursor-pointer w-full h-14 rounded-2xl items-center text-left text-[#696F8C] hover:bg-[#F5F7FC]',
         $route.path === '/Sent'
-          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] border-[#0172CB]'
+          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] font-semibold border-[#0172CB]'
           : '',
       ]"
     >
@@ -89,7 +90,7 @@
       :class="[
         'flex justify-left space-x-2 p-2 justify-between cursor-pointer w-full h-14 rounded-2xl items-center text-left text-[#696F8C] hover:bg-[#F5F7FC]',
         $route.path === '/Draft'
-          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] border-[#0172CB]'
+          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] font-semibold border-[#0172CB]'
           : '',
       ]"
     >
@@ -109,7 +110,7 @@
       :class="[
         'flex justify-left space-x-2 p-2 justify-between cursor-pointer w-full h-14 rounded-2xl items-center text-left text-[#696F8C] hover:bg-[#F5F7FC]',
         $route.path === '/Completed'
-          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] border-[#0172CB]'
+          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] font-semibold border-[#0172CB]'
           : '',
       ]"
     >
@@ -129,7 +130,7 @@
       :class="[
         'flex justify-left space-x-2 p-2 justify-between cursor-pointer w-full h-14 rounded-2xl items-center text-left text-[#696F8C] hover:bg-[#F5F7FC]',
         $route.path === '/Archive'
-          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] border-[#0172CB]'
+          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] font-semibold border-[#0172CB]'
           : '',
       ]"
     >
@@ -149,7 +150,7 @@
       :class="[
         'flex justify-left space-x-2 p-2 justify-between cursor-pointer w-full h-14 rounded-2xl items-center text-left text-[#696F8C] hover:bg-[#F5F7FC]',
         $route.path === '/Trash'
-          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] border-[#0172CB]'
+          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] font-semibold border-[#0172CB]'
           : '',
       ]"
     >
@@ -171,7 +172,7 @@
       :class="[
         'flex justify-left space-x-2 p-2 cursor-pointer w-full h-14 rounded-2xl items-center text-left text-[#696F8C] hover:bg-[#F5F7FC]',
         $route.path === '/Settings'
-          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] border-[#0172CB]'
+          ? 'bg-[#F5F7FC] text-[#101840] border-l-[3px] font-semibold border-[#0172CB]'
           : '',
       ]"
     >

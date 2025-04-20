@@ -1,25 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
 import Navbar from '@/components/layout/Navbar.vue'
 import Sidebar from '@/components/layout/Sidebar.vue'
 import { RouterView } from 'vue-router'
-
-// State to track window width for responsive behavior
-const windowWidth = ref(window.innerWidth)
-
-// Update window width on resize
-const handleResize = () => {
-  windowWidth.value = window.innerWidth
-}
-
-// Set up and clean up resize event listener
-onMounted(() => {
-  window.addEventListener('resize', handleResize)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('resize', handleResize)
-})
 </script>
 
 <template>
