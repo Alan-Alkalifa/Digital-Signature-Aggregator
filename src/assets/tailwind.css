@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+/* src/assets/tailwind.css */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #f4f6fa;
+}
+
+@layer base {
+  input {
+    @apply w-full bg-[#F4F6FA] p-3 rounded-t-md border-0 border-b-2 text-[#101840] border-[#C1C4D6] focus:text-[#101840] focus:bg-[#EDF7FF] focus:border-blue-500 focus:outline-none;
+  }
+}
+@layer components {
+}
