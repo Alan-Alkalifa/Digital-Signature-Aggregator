@@ -1,0 +1,63 @@
+/* --- Toolbar --- */
+.PSPDFKit-Toolbar {
+  background-color: #0172CB !important; /* Dark gray */
+  border-bottom: 1px solid #0061AD !important;
+}
+
+/* --- Buttons --- */
+.PSPDFKit-Button {
+  color: #f3f4f6 !important; /* Light text */
+  background-color: transparent !important;
+}
+
+.PSPDFKit-Button:hover {
+  background-color: #0061AD !important; /* Soft hover background */
+}
+
+/* --- Sidebar --- */
+.PSPDFKit-Sidebar {
+  background: #0172CB !important; /* Very dark sidebar */
+  opacity : 80% !important;
+  color: #f3f4f6 !important;
+}
+
+/* --- Toolbar Separators --- */
+.PSPDFKit-ToolbarSeparator {
+  background-color: #ffffff !important;
+}
+
+/* --- Search Input --- */
+.PSPDFKit-SearchInput {
+  background-color: #0172CB !important;
+  color: #f3f4f6 !important;
+  border: 1px solid #f3f4f6 !important;
+}
+
+/* --- Context Menus (e.g. annotation actions) --- */
+.PSPDFKit-Menu {
+  background-color: #0172CB !important;
+  color: #f3f4f6 !important;
+}
+
+.PSPDFKit-MenuItem:hover {
+  background-color: #0061AD!important;
+}
+
+/* --- Annotation Toolbar --- */
+.PSPDFKit-AnnotationToolbar {
+  background-color: #0061AD !important;
+  border-top: 1px solid #f3f4f6 !important;
+}
+
+/* --- Selected Buttons --- */
+.PSPDFKit-Button--isActive {
+  background-color: #0061AD !important; /* Blue for active tools */
+  color: #ffffff !important;
+}
+
+/* --- Drop Down Selects --- */
+.PSPDFKit-Select {
+  background-color: #0172CB !important;
+  color: #f9fafb !important;
+  border-color: #f9fafb !important;
+}

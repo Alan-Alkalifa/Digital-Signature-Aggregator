@@ -1,11 +1,12 @@
 <template>
   <aside class="m-4 px-4 py-3 flex flex-col space-y-4">
-    <button
+    <RouterLink
+      to="/PDFView"
       class="bg-[#0172CB] flex justify-center space-x-2 p-2 cursor-pointer w-full h-14 hover:bg-[#0061AD] hover:border-4 hover:border-[#92CFFF4D] text-white rounded-2xl items-center text-center"
     >
       <img src="/Icon/UploadFile.svg" alt="Upload File" />
       <span class="text-[16px] font-medium">Upload Document</span>
-    </button>
+    </RouterLink>
 
     <button
       class="flex justify-center space-x-2 p-2 cursor-pointer w-full h-14 text-[#0172CB] hover:bg-[#EDF7FF] hover:border-1 hover:border-[#0172CB] rounded-2xl items-center text-center"

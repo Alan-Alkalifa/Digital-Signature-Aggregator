@@ -10,6 +10,8 @@ import ArchiveView from '@/views/components/ArchiveView.vue'
 import TrashView from '@/views/components/TrashView.vue'
 import SentView from '@/views/components/SentView.vue'
 import SettingsView from '@/views/components/SettingsView.vue'
+import PDFView from '@/views/components/PDFView.vue'
+import MainDashboardView from '@/views/components/MainDashboardView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -27,7 +29,7 @@ const router = createRouter({
         {
           path: '/MainDashboard',
           name: 'Main Dashboard',
-          component: () => import('@/views/components/MainDashboardView.vue'),
+          component: MainDashboardView
         },
         { path: '/MyDocument', name: 'My Document', component: MyDocumentView },
         { path: '/Inbox', name: 'Inbox', component: InboxView },
@@ -37,6 +39,7 @@ const router = createRouter({
         { path: '/Archive', name: 'Archive', component: ArchiveView },
         { path: '/Trash', name: 'Trash', component: TrashView },
         { path: '/Settings', name: 'Settings', component: SettingsView },
+        { path: '/PDFView', name: 'PDFView', component: PDFView},
       ],
       meta: {
         requiresAuth: true,
