@@ -11,7 +11,10 @@ import TrashView from '@/views/components/TrashView.vue'
 import SentView from '@/views/components/SentView.vue'
 import SettingsView from '@/views/components/SettingsView.vue'
 import MainDashboardView from '@/views/components/MainDashboardView.vue'
-import PDFSignView from '@/views/components/PDFSignView.vue'
+import UploadDocumentView from '@/views/components/UploadDocumentView.vue'
+import StepTwoFormUI from '@/components/ui/StepTwoFormUI.vue'
+import StepOneFormUI from '@/components/ui/StepOneFormUI.vue'
+import StepThreeFormUI from '@/components/ui/StepThreeFormUI.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,11 +42,32 @@ const router = createRouter({
         { path: '/Archive', name: 'Archive', component: ArchiveView },
         { path: '/Trash', name: 'Trash', component: TrashView },
         { path: '/Settings', name: 'Settings', component: SettingsView },
-        {
-          path: '/PDFSign',
-          name: 'PDF Sign Signature',
-          component: PDFSignView,
-        },
+        { path: '/MyDocument/Step1', name: 'Upload Document', component: UploadDocumentView,
+          meta: { requiresAuth: true },
+          children: [
+            {
+              path: '', // 👈 default route
+              name: 'Upload Default',
+              component: StepOneFormUI,
+            },
+            {
+              path: '/MyDocument/StepOne', // 👈 default route
+              name: 'Step One',
+              component: StepOneFormUI,
+            },
+            
+            {
+              path: '/MyDocument/StepTwo',
+              name: 'Step Two',
+              component: StepTwoFormUI,
+            },
+            {
+              path: '/MyDocument/StepThree',
+              name: 'Step Three',
+              component: StepThreeFormUI,
+            },
+          ],
+         },
       ],
       meta: {
         requiresAuth: true,

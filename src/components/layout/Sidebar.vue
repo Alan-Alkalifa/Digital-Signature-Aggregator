@@ -1,12 +1,43 @@
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const fileInput = ref(null)
+const router = useRouter()
+
+const triggerFileInput = () => {
+  fileInput.value.click()
+}
+
+const handleFileUpload = (event) => {
+  const file = event.target.files[0]
+  if (file) {
+    const blobUrl = URL.createObjectURL(file)
+    // Menambahkan query `t` agar route berubah walau file yang sama diupload
+    router.push({ path: '/MyDocument/StepOne', query: { blobUrl, t: Date.now() } })
+  }
+}
+</script>
+
 <template>
-  <aside class="m-4 px-4 py-3 flex flex-col space-y-4">
-    <RouterLink
-      to="/PDFSign"
-      class="bg-[#0172CB] flex justify-center space-x-2 p-2 cursor-pointer w-full h-14 hover:bg-[#0061AD] hover:border-4 hover:border-[#92CFFF4D] text-white rounded-2xl items-center text-center"
-    >
-      <img src="/Icon/UploadFile.svg" alt="Upload File" />
-      <span class="text-[16px] font-medium">Upload Document</span>
-    </RouterLink>
+  <aside class="m-4 px-4 py-3 flex flex-col">
+    <div class="space-y-4">
+      <div>
+        <button
+          @click="triggerFileInput"
+          class="bg-[#0172CB] flex justify-center space-x-2 p-3 cursor-pointer w-full h-14 hover:bg-[#0061AD] text-white rounded-2xl items-center text-center"
+        >
+          <img src="/Icon/UploadFile.svg" alt="Upload File" />
+          <span class="text-[16px] font-medium">Upload Document</span>
+        </button>
+        <input
+          type="file"
+          ref="fileInput"
+          @change="handleFileUpload"
+          accept="application/pdf"
+          class="hidden"
+        />
+      </div>
 
     <button
       class="flex justify-center space-x-2 p-2 cursor-pointer w-full h-14 text-[#0172CB] hover:bg-[#EDF7FF] hover:border-1 hover:border-[#0172CB] rounded-2xl items-center text-center"
@@ -14,9 +45,10 @@
       <img src="/Icon/ScanVerification.svg" alt="Scan Verification" />
       <span class="text-[16px] font-medium">PDF Verification</span>
     </button>
-
+ 
     <span class="w-full h-px bg-[#E6E8F0]"></span>
-
+  </div>
+  <div class="">
     <RouterLink
       to="/MainDashboard"
       :class="[
@@ -43,7 +75,7 @@
       <span class="text-[16px] font-medium">My Document</span>
     </RouterLink>
 
-    <span class="w-full h-px bg-[#E6E8F0]"></span>
+    <div class="w-full h-[1px] border bg-[#E6E8F0]"></div>
 
     <RouterLink
       to="/Inbox"
@@ -179,5 +211,6 @@
       <img src="/Icon/Settings.svg" alt="Settings" />
       <span class="text-[16px] font-medium">Settings</span>
     </RouterLink>
+  </div>
   </aside>
 </template>
